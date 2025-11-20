@@ -1,0 +1,7 @@
+namespace: microservices
+
+resources:
+  - ../../base
+
+patchesStrategicMerge:
+  - replicas-patch.yaml

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+spec:
+  selector:
+    matchLabels:
+      app: user-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+        - name: user-service
+          image: ayoobki/user-service:latest
+          ports:
+            - containerPort: 3001
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-service
+spec:
+  type: ClusterIP
+  selector:
+    app: user-service
+  ports:
+    - port: 3001
+      targetPort: 3001
