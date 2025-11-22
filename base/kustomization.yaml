@@ -5,7 +5,7 @@ namespace: microservices
 
 resources:
   - namespace.yaml
-  - ingress.yaml
+  # - ingress.yaml
   - deployments/user-service.yaml
   - deployments/profile-service.yaml
   - deployments/order-service.yaml
