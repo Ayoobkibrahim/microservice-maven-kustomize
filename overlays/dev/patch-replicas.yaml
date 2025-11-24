@@ -53,3 +53,17 @@ spec:
       labels:
         app: product-service
   replicas: 1
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-service
+spec:
+  selector:
+    matchLabels:
+      app: auth-service
+  template:
+    metadata:
+      labels: 
+        app: auth-service
+  replicas: 1

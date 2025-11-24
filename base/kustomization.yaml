@@ -10,3 +10,5 @@ resources:
   - deployments/profile-service.yaml
   - deployments/order-service.yaml
   - deployments/product-service.yaml
+  - deployments/auth-service.yaml
+  
